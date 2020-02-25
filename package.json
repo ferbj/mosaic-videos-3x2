@@ -1,0 +1,23 @@
+{
+  "name": "mosaic-videos",
+  "version": "1.0.0",
+  "description": "compress video to mosaic",
+  "main": "ffmpeg-mosaic.js",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "ffmpeg": "^0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gist.github.com/e6456eb0c5cbfea12bc7.git"
+  },
+  "author": "fernando balta",
+  "license": "MIT"
+}
