@@ -96,11 +96,11 @@ videoInfo.forEach(function (val, index, array) {
 });
 });
 console.log('complexFilter',complexFilter)
-var outFile = 'Fileout.mp4';
+let outFile = 'Fileout.mp4';
 //duration of video and building of mosaic video
 
 command
-.duration(45)
+.duration(20)
 .videoCodec('libx264')
 .audioCodec('libmp3lame')
 .format('mp4')
@@ -116,5 +116,14 @@ command
     console.log('Finished processing'); 
 });
 
-}
+//waiting 45 seconds of first processing from mp4 to webm
+setTimeout(() => {
+ffmpeg({source: 'Fileout.mp4'})
+  .withVideoCodec('libvpx')
+  .addOptions(['-qmin 0', '-qmax 50', '-crf 5'])
+  .withVideoBitrate(1024)
+  .withAudioCodec('libvorbis')
+  .saveToFile('output.webm');
 
+},45000);
+}
